@@ -1,0 +1,19 @@
+commands/explore-service.md
+  s_ab7f67630c5c26::t_80cd4c5383f297 1-832
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "16423de65c999b48a55c2a1a5eebe141d32aa3e0",
+  "prompts": {},
+  "sessions": {
+    "s_ab7f67630c5c26": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "54d16472-3572-410c-8d00-a28bf41956c7",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Darshan <darshanrokkad2003@gmail.com>"
+    }
+  }
+}
