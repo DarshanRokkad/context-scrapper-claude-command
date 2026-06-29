@@ -1,0 +1,302 @@
+You are a Principal Engineer, AI Platform Architect, Knowledge Management Architect, and Developer Productivity Expert.
+
+I want to build an internal platform called ServiceKB.
+
+DO NOT start implementation.
+
+Your first responsibility is to deeply brainstorm, challenge assumptions, identify risks, propose alternatives, and create a detailed project blueprint.
+
+----------------------------------------------------
+PROBLEM
+----------------------------------------------------
+
+I work across 15-20 backend microservices.
+
+Whenever I receive a bug or feature request:
+
+1. I understand requirements from stakeholders.
+2. I provide instructions to Claude Code.
+3. Claude generates code.
+4. Generated code often does not match:
+   - Service architecture
+   - Coding conventions
+   - Existing patterns
+   - Domain terminology
+   - Team practices
+   - Business rules
+
+Every service has different conventions and patterns.
+
+Currently the knowledge exists:
+- In source code
+- In senior engineers' heads
+- In old PRs
+- In documentation
+- In Slack discussions
+
+AI agents do not have access to this knowledge.
+
+----------------------------------------------------
+VISION
+----------------------------------------------------
+
+I want a system that can scan a repository ONCE and automatically generate a reusable knowledge package.
+
+Example:
+
+servicekb scan
+
+↓
+
+Produces
+
+payment-service.kb
+
+The generated knowledge package should be:
+
+- Shareable
+- Versioned
+- Queryable
+- AI-consumable
+- Team-maintained
+- Automatically generated
+- Incrementally updated
+
+The goal is:
+
+Any AI agent should be able to load the knowledge package and generate code that matches the repository's conventions and architecture.
+
+----------------------------------------------------
+IMPORTANT PRINCIPLES
+----------------------------------------------------
+
+1. Minimal manual effort.
+
+I do NOT want engineers manually writing documentation.
+
+Knowledge should be extracted automatically.
+
+2. Knowledge should survive beyond any AI vendor.
+
+Must work with:
+- Claude
+- Cursor
+- Copilot
+- Gemini
+- Future agents
+
+3. Repository should be scanned once.
+
+Subsequent updates should be incremental.
+
+4. Knowledge package should become a reusable organizational asset.
+
+5. Focus on backend services first.
+
+Java/Kotlin microservices are primary targets.
+
+----------------------------------------------------
+WHAT THE SYSTEM SHOULD LEARN
+----------------------------------------------------
+
+Architecture:
+- Layers
+- Package structure
+- Dependency flow
+- Module boundaries
+
+Coding conventions:
+- Logging
+- Exception handling
+- Validation
+- DTO patterns
+- Mapper patterns
+- API patterns
+- Naming conventions
+
+Business knowledge:
+- Domain terminology
+- Common workflows
+- Integration ownership
+- Business rules
+
+Implementation patterns:
+- Feature templates
+- Similar implementations
+- Existing reusable code
+
+Operational knowledge:
+- Metrics
+- Monitoring
+- Events
+- Kafka patterns
+
+Testing:
+- Test structure
+- Mocking conventions
+- Integration testing
+
+Anti-patterns:
+- What should never be done
+
+----------------------------------------------------
+EXAMPLE WORKFLOW
+----------------------------------------------------
+
+Engineer:
+
+servicekb scan
+
+↓
+
+Knowledge package generated
+
+↓
+
+Committed to repository
+
+↓
+
+Later
+
+"Implement recurring payment"
+
+↓
+
+Agent loads knowledge package
+
+↓
+
+Agent finds:
+- Similar features
+- Coding conventions
+- Business rules
+- Architecture patterns
+
+↓
+
+Agent generates repository-native code
+
+----------------------------------------------------
+DELIVERABLES I WANT FROM YOU
+----------------------------------------------------
+
+I want a complete project discovery document.
+
+Please produce:
+
+1. Executive Summary
+
+2. Problem Analysis
+
+3. Existing Solutions Review
+   - Sourcegraph
+   - GraphRAG
+   - CodeQL
+   - OpenGrep
+   - Tree-sitter
+   - Cursor indexing
+   - Claude Code memory
+   - MCP servers
+   - Any relevant open source projects
+
+4. Build vs Buy Analysis
+
+5. Architecture Options
+
+For each option:
+- Pros
+- Cons
+- Complexity
+- Cost
+- Scalability
+
+6. Recommended Architecture
+
+7. System Components
+
+Break down into:
+- Scanner
+- Extractor
+- Knowledge Generator
+- Embedding Engine
+- Query Engine
+- Agent Integration Layer
+- Incremental Update Engine
+
+8. Knowledge Package Design
+
+Design:
+- Folder structure
+- Schemas
+- Metadata
+- Versioning
+
+9. Repository Intelligence Model
+
+How the system understands:
+- Architecture
+- Business rules
+- Patterns
+- Dependencies
+
+10. Knowledge Extraction Strategies
+
+How to extract:
+- Coding conventions
+- Architecture
+- Feature patterns
+- Business terminology
+
+11. Similar Feature Discovery Design
+
+12. Incremental Update Design
+
+13. Multi-Service Support
+
+14. Team Collaboration Model
+
+15. Agent Integration Model
+
+How:
+- Claude Code
+- Cursor
+- MCP
+- Custom agents
+
+Would consume the knowledge package.
+
+16. MVP Definition
+
+What can be built in:
+- Week 1
+- Week 2
+- Week 4
+- Week 8
+
+17. Technical Roadmap
+
+18. Risks
+
+19. Unknowns
+
+20. Future Enhancements
+
+----------------------------------------------------
+IMPORTANT
+----------------------------------------------------
+
+Challenge my assumptions.
+
+If there is a better architecture than a generated knowledge package,
+propose it.
+
+If there are existing open source projects that solve 80% of the problem,
+identify them.
+
+If my approach has weaknesses,
+call them out explicitly.
+
+Do not jump into coding.
+
+Think like a principal engineer designing a platform that could be adopted by an entire engineering organization.
