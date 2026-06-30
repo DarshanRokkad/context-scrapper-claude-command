@@ -155,35 +155,49 @@ repo-root/
     ├── security.md
     ├── avoid.md                     ← deprecated/anti-patterns — all skills read this first
     ├── examples/
-    │   ├── controller.java          ← scored: richest real example
-    │   ├── service.java
-    │   ├── repository.java
-    │   ├── dto.java
-    │   ├── entity.java
-    │   ├── test.java
-    │   ├── feign-client.java        ← only if HTTP client present
-    │   └── exception-handler.java
-    └── skills/                      ← each file < 150 lines
-        ├── generate-controller.md
-        ├── generate-service.md
-        ├── generate-repository.md
-        ├── generate-dto.md
-        ├── generate-entity.md
-        ├── generate-test.md
-        └── generate-feign-client.md ← only if HTTP client present
+    │   └── exception-handler.java   ← global; referenced by error-handling.md
+    └── skills/                      ← each skill is a directory, not a flat .md
+        ├── generate-controller/
+        │   ├── SKILL.md             ← frontmatter + job/rules/steps; < 150 lines
+        │   └── examples/
+        │       └── controller.java  ← scored: richest real controller in this repo
+        ├── generate-service/
+        │   ├── SKILL.md
+        │   └── examples/
+        │       └── service.java
+        ├── generate-repository/
+        │   ├── SKILL.md
+        │   └── examples/
+        │       └── repository.java
+        ├── generate-dto/
+        │   ├── SKILL.md
+        │   └── examples/
+        │       └── dto.java
+        ├── generate-entity/
+        │   ├── SKILL.md
+        │   └── examples/
+        │       └── entity.java
+        ├── generate-test/
+        │   ├── SKILL.md
+        │   └── examples/
+        │       └── test.java
+        └── generate-feign-client/   ← only if Feign/HTTP client present
+            ├── SKILL.md
+            └── examples/
+                └── feign-client.java
 ```
 
 ### Skill File Design Principles
 
-Each skill file follows a strict anatomy:
+Each skill is a directory containing `SKILL.md` and an `examples/` subfolder. `SKILL.md` follows a strict anatomy:
+- **YAML frontmatter** — `name` and `description` fields; description lists trigger phrases and what NOT to use the skill for
 - **Job** — one sentence describing what failure mode it prevents
-- **Reference Example** — points to a real file in `.claude/examples/`
+- **Before You Start** — read `avoid.md` + read `examples/<file>.java`
 - **Rules** — DO (8–12 bullets) and NEVER (4–6 explicit bans)
 - **Steps** — numbered, one sentence each
 - **Hard limit** — under 150 lines total
 
-Skills reference examples rather than embed code. This keeps skills concise and
-keeps examples up to date (they are copied from production code, not paraphrased).
+Each skill's `examples/` contains the single best real code file for that component type, copied exactly from production code. Skills reference it as `examples/<file>.java` (relative). This keeps skills self-contained and examples up to date.
 
 ## Dynamic Runtime Behavior
 
